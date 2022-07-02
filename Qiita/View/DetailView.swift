@@ -50,11 +50,14 @@ struct DetailView: View {
                         Text(description)
                             .font(.system(size: 17))
                     }
-                    UrlButton(url: article.user.facebookId, text: "Facebook", uiColor: UIColor.rgb(57, 118, 234))
-                    UrlButton(url: article.user.githubLoginName, text: "Github", uiColor: UIColor.rgb(33, 33, 33))
-                    UrlButton(url: article.user.linkedinId, text: "LinkedIn", uiColor: UIColor.rgb(51, 117, 176))
-                    UrlButton(url: article.user.twitterScreenName, text: "Twitter", uiColor: UIColor.rgb(77, 159, 235))
-                    UrlButton(url: article.user.websiteUrl, text: "Website", uiColor: UIColor.rgb(158, 158, 158))
+                    Group {
+                        UrlButton(url: article.user.id, text: "ユーザーを見る", uiColor: UIColor.rgb(116, 194, 58))
+                        UrlButton(url: article.user.facebookId, text: "Facebook", uiColor: UIColor.rgb(57, 118, 234))
+                        UrlButton(url: article.user.githubLoginName, text: "Github", uiColor: UIColor.rgb(33, 33, 33))
+                        UrlButton(url: article.user.linkedinId, text: "LinkedIn", uiColor: UIColor.rgb(51, 117, 176))
+                        UrlButton(url: article.user.twitterScreenName, text: "Twitter", uiColor: UIColor.rgb(77, 159, 235))
+                        UrlButton(url: article.user.websiteUrl, text: "Website", uiColor: UIColor.rgb(158, 158, 158))
+                    }
                 }
             }
             Spacer()

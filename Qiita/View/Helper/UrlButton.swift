@@ -15,20 +15,24 @@ struct UrlButton: View {
     
     var body: some View {
         if let url = url {
-            Button {
-                openUrl(createUrl(url))
-            } label: {
-                Text(text)
-                    .bold()
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, minHeight: 50)
+            if url != "" {
+                Button {
+                    openUrl(createUrl(url))
+                } label: {
+                    Text(text)
+                        .bold()
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                }
+                .background(Color(uiColor))
             }
-            .background(Color(uiColor))
         }
     }
     
     func createUrl(_ url: String) -> String {
         switch text {
+        case "ユーザーを見る":
+            return "https://qiita.com/\(url)"
         case "Facebook":
             return "https://facebook.com/\(url)"
         case "Github":
